@@ -4,6 +4,85 @@
 
 {% block body %}
 <div class="container-fluid px-0">
-    <img src="https://picsum.photos/1200/600" class="d-block w-100" alt="..." style="height:100vh; object-fit:cover;">
+    <img src="static/contact.png" class="d-block w-100" alt="..." style="height:70vh;">
 </div>
+<div class="container my-4" >
+    <div class="container">
+        <h1 style="text-align: center;">Connect with us</h1>
+    </div>
+<form class="row g-3" method="post" action="/contact">
+    {% csrf_token %}
+  <!-- First Name -->
+  <div class="col-md-6">
+    <label for="inputFirstName" class="form-label">First Name</label>
+    <input type="text" class="form-control" id="inputFirstName" name="firstname" placeholder="John">
+  </div>
+
+  <!-- Last Name -->
+  <div class="col-md-6">
+    <label for="inputLastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" id="inputLastName" name="lastname" placeholder="Doe">
+  </div>
+
+  <!-- Email -->
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4" name= "email" placeholder="you@example.com">
+  </div>
+
+  <!-- Password -->
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="********">
+  </div>
+
+  <!-- PhoneNumber -->
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Phone/Mobile</label>
+    <input type="text" class="form-control" id="inputAddress" name="mobile" placeholder="9301..">
+  </div>
+
+  <!-- City -->
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity" name="city">
+  </div>
+
+  <!-- gender -->
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Gender</label>
+    <select id="inputState" name="gender" class="form-select">
+      <option selected>Select your gender</option>
+      <option>Female</option>
+      <option>Male</option>
+      <option>Princess</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+
+  <!-- Extra Example Input -->
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Describe about your goal</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="about" placeholder="what is your goal in your gym journey">
+  </div>
+
+  <!-- Checkbox -->
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        I hereby agree with the terms & conditions.
+      </label>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+</form>
+</div>
+
+
 {% endblock body %}
